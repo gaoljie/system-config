@@ -97,3 +97,4 @@ source $ZSH/oh-my-zsh.sh
 alias yi='yarn install'
 alias yd='yarn dev'
 alias yb='yarn build'
+alias ys='yarn start'
