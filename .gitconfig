@@ -10,8 +10,9 @@
 	st = status
 	aa = add -A .
 	cm = commit -a -m
-    cmp = "!f() { git add -A && git commit -m \"$@\" && git push; }; f"
-	aacm = !git add -A . && git commit -m
+	rh = "!git reset —-hard"
+    	cmp = "!f() { git add -A && git commit -m \"$@\" && git push; }; f"
+	am = !git add -A . && git commit -m
 	cp = cherry-pick
 	amend = commit --amend -m
 	dev = !git checkout dev && git pull origin dev
