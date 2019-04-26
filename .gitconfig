@@ -5,6 +5,7 @@
 	br = branch
 	brd = branch -d
 	brD = branch -D
+	fr = !git fetch && git rebase
 	merged = branch --merged
 	dmerged = "git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 	st = status
