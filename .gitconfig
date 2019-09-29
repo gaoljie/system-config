@@ -12,7 +12,7 @@
 	aa = add -A .
 	cm = commit -a -m
 	rh = "!git reset —-hard"
-    	cmp = "!f() { git add -A && git commit -m \"$@\" && git push; }; f"
+	cmp = "!f() { git add -A && git commit -m \"$@\" && git push; }; f"
 	am = !git add -A . && git commit -m
 	cp = cherry-pick
 	amend = commit --amend -m

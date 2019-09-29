@@ -1,16 +1,10 @@
-echo "Start installing"
-
 echo "Configuring OSX..."
 
 # Show filename extensions by default
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
-# Enable tap-to-click
-defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
-
-# Disable "natural" scroll
-#defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+# password can be less than 4 digits
+pwpolicy -clearaccountpolicies
 
 
 echo "Installing xcode-stuff"
@@ -27,14 +21,18 @@ fi
 echo "Updating homebrew..."
 brew update
 
+
+echo "Installing brew packages..."
+
 PACKAGES=(
     git
     n
     redis
     yarn
+    zsh
+    aws
 )
 
-echo "Installing packages..."
 brew install ${PACKAGES[@]}
 
 
@@ -49,29 +47,53 @@ CASKS=(
     iina
     neteasemusic
     postman
+    iterm2
+    spectacle
     shadowsocksx-ng
     slack
-    webstorm
+    visual-studio-code
     wechat
-    zoomus
+    insomnia
 )
 
 brew cask install ${CASKS[@]}
 
 brew cleanup
 
-
-echo "Configuring..."
+echo "Config n package"
 
 # n configure
+sudo mkdir /usr/local/n
 sudo chown -R $(whoami) /usr/local/n
+sudo chown -R $(whoami) /usr/local/lib /usr/local/include /usr/local/share
 n stable
 
+# yarn global package
+yarn global add @vue/cli
+yarn global add serve
+yarn global add create-react-app
+
+
 # start redis
-brew services start redis
+# brew services start redis
 
 # download oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+
+curl -o ~/.zshrc https://raw.githubusercontent.com/gaoljie/system-config/master/.zshrc
+
+#  install powefont
+git clone https://github.com/powerline/fonts.git --depth=1
+cd fonts
+./install.sh
+
+# install hightlight
+cd ~/.oh-my-zsh/custom/plugins/
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+git clone https://github.com/zsh-users/zsh-autosuggestions
+
+
 
 # git configure
 cd ~
@@ -79,18 +101,15 @@ if [ -f ".ssh/id_rsa.pub" ]; then
     echo "git already set up"
 else
 	echo "git setup"
-    ssh-keygen -t rsa -b 4096 -C "gaoljie@foxmail.com"
+    ssh-keygen -t rsa -b 4096 -C "gaoljie@gmail.com"
     eval `ssh-agent`
     ssh-add -K ~/.ssh/id_rsa
     pbcopy < ~/.ssh/id_rsa.pub
-    curl -O https://raw.githubusercontent.com/gaoljie/system-config/master/.gitconfig ~/.gitconfig
+    cd ~
+    sudo curl -O https://raw.githubusercontent.com/gaoljie/system-config/master/.gitconfig
 fi
 
-# klook configure
-echo "KLook install"
-n 8.11.3
-yarn global add gulp
-brew install pkg-config cairo libpng jpeg giflib pango libjpeg
+
 
 profile=~/.zshrc
 
