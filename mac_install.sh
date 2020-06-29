@@ -31,6 +31,7 @@ PACKAGES=(
     yarn
     zsh
     aws
+    youtube-dl
 )
 
 brew install ${PACKAGES[@]}
@@ -49,6 +50,12 @@ CASKS=(
     postman
     iterm2
     spectacle
+    mos
+    sequel-pro
+    ticktick
+    typora
+    webstorm
+    webtorrent
     shadowsocksx-ng
     slack
     visual-studio-code
