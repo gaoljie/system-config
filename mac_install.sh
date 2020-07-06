@@ -32,6 +32,7 @@ PACKAGES=(
     zsh
     aws
     youtube-dl
+    postgresql
 )
 
 brew install ${PACKAGES[@]}
