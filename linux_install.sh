@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# echo y | sh -c "$(wget -O- https://raw.githubusercontent.com/gaoljie/system-config/master/linux_install.sh)"
+# echo y | sh -c "$(curl -fsSL https://raw.githubusercontent.com/gaoljie/system-config/master/linux_install.sh)"
 
 echo "install zsh"
 sudo apt install zsh
@@ -14,7 +14,7 @@ echo "install n yarn"
 sudo mkdir -p /usr/local/n
 sudo chown -R $(whoami) /usr/local/n
 sudo chown -R $(whoami) /usr/local/bin /usr/local/lib /usr/local/include /usr/local/share
-npm install -g n yarn
+sudo npm install -g n yarn
 
 echo "config git and ssh"
 if [ -f "~/.ssh/id_rsa.pub" ]; then
