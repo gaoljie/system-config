@@ -21,4 +21,4 @@ scoop install git
 scoop bucket add extras
 
 scoop install dismplusplus
-scoop install webstorm googlechrome insomnia notion slack vscode webtorrent
+# scoop install webstorm googlechrome insomnia notion slack vscode webtorrent potplayer listary quicklook snipaste
