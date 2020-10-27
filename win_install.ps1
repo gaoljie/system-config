@@ -1,4 +1,4 @@
-# $Script = Invoke-WebRequest https://raw.githubusercontent.com/gaoljie/system-config/master/windows_install_1.ps1
+# $Script = Invoke-WebRequest https://raw.githubusercontent.com/gaoljie/system-config/master/win_install.ps1
 # Invoke-Expression $($Script.Content)
 
 # install wsl2
