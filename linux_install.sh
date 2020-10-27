@@ -5,9 +5,6 @@
 echo "install zsh"
 sudo apt install zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-curl -o ~/.zshrc https://raw.githubusercontent.com/gaoljie/system-config/master/.zshrc
-echo "export ZSH=\"$(pwd ~)/.oh-my-zsh\"" >>  ~/.zshrc
-echo "source \$ZSH/oh-my-zsh.sh" >>  ~/.zshrc
 
 echo "install nodejs"
 curl -sL https://deb.nodesource.com/setup_current.x | sudo -E bash -
