@@ -1,4 +1,5 @@
-# & "C:\PATH\TO\SCRIPT\first_script.ps1"
+# $Script = Invoke-WebRequest https://raw.githubusercontent.com/gaoljie/system-config/master/win_install.ps1
+# Invoke-Expression $($Script.Content)
 
 $env:SCOOP='D:\Applications\Scoop'
 [Environment]::SetEnvironmentVariable('SCOOP', $env:SCOOP, 'User')
