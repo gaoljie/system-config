@@ -1,6 +1,11 @@
 # $Script = Invoke-WebRequest https://raw.githubusercontent.com/gaoljie/system-config/master/windows_install_1.ps1
 # Invoke-Expression $($Script.Content)
 
+# install wsl2
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+wsl --set-default-version 2
+
 $env:SCOOP='D:\Applications\Scoop'
 [Environment]::SetEnvironmentVariable('SCOOP', $env:SCOOP, 'User')
 
