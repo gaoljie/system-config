@@ -4,8 +4,10 @@
 
 # install zsh
 sudo apt install zsh
-
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+curl -o ~/.zshrc https://raw.githubusercontent.com/gaoljie/system-config/master/.zshrc
+echo "export ZSH=\"$(pwd ~)/.oh-my-zsh\"" >>  ~/.zshrc
+echo "source \$ZSH/oh-my-zsh.sh" >>  ~/.zshrc
 
 # install nodejs
 curl -sL https://deb.nodesource.com/setup_current.x | sudo -E bash -
@@ -26,8 +28,9 @@ if [ -f "~/.ssh/id_rsa.pub" ]; then
 else
 	echo "git setup"
     ssh-keygen -t rsa -b 4096 -C "gaoljie@gmail.com"
+    # The SSH authentication agent allows you to enter your private key passphrase once and it will save it for the whole login session.
     eval "$(ssh-agent -s)"
     ssh-add ~/.ssh/id_rsa
     curl https://raw.githubusercontent.com/gaoljie/system-config/master/.gitconfig -o ~/.gitconfig
-    
+
 fi
