@@ -27,3 +27,17 @@ else
     ssh-add ~/.ssh/id_rsa
     curl https://raw.githubusercontent.com/gaoljie/system-config/master/.gitconfig -o ~/.gitconfig
 fi
+
+echo "config zsh alias"
+profile=~/.zshrc
+
+if grep -q "alias yd" "$profile"; then
+    echo "already added zsh alia"
+else
+    echo "alias yi='yarn install'" >> ~/.zshrc
+    echo "alias yd='yarn dev'" >> ~/.zshrc
+    echo "alias yb='yarn build'" >> ~/.zshrc
+    echo "alias ys='yarn start'" >> ~/.zshrc
+fi
+
+echo "Done!"
