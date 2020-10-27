@@ -40,3 +40,6 @@
 
 [rebase]
         autosquash = true
+[user]
+	name = Jay Gao
+	email = gaoljie@gmail.com

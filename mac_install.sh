@@ -105,7 +105,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions
 
 # git configure
 cd ~
-if [ -f ".ssh/id_rsa.pub" ]; then
+if [ -f "~/.ssh/id_rsa.pub" ]; then
     echo "git already set up"
 else
 	echo "git setup"
