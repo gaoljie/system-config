@@ -1,4 +1,4 @@
-# $Script = Invoke-WebRequest https://raw.githubusercontent.com/gaoljie/system-config/master/windows_install.ps1
+# $Script = Invoke-WebRequest https://raw.githubusercontent.com/gaoljie/system-config/master/windows_install_1.ps1
 # Invoke-Expression $($Script.Content)
 
 $env:SCOOP='D:\Applications\Scoop'
@@ -11,6 +11,9 @@ Set-ExecutionPolicy RemoteSigned -scope CurrentUser
 
 # run the installer
 iwr -useb get.scoop.sh | iex
+
+scoop install git
 scoop bucket add extras
 
-scoop install dismplusplus webstorm googlechrome insomnia notion slack vscode webtorrent
+scoop install dismplusplus
+scoop install webstorm googlechrome insomnia notion slack vscode webtorrent
