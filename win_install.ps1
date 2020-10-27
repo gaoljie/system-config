@@ -11,4 +11,4 @@ $env:SCOOP_GLOBAL='D:\Applications'
 iwr -useb get.scoop.sh | iex
 scoop bucket add extras
 
-scoop install dismplusplus 
+scoop install dismplusplus webstorm googlechrome insomnia notion slack vscode webtorrent
