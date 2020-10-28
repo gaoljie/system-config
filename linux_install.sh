@@ -4,7 +4,7 @@
 
 sudo apt update
 echo "install zsh"
-sudo apt install zsh
+sudo apt install -y zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 chsh -s $(which zsh)
@@ -32,10 +32,10 @@ sudo chown -R $(whoami) /usr/local/bin /usr/local/lib /usr/local/include /usr/lo
 sudo npm install -g n yarn
 
 echo "install mysql"
-sudo apt install mysql-server
+sudo apt install -y mysql-server
 
 echo "install redis"
-sudo apt install redis
+sudo apt install -y redis
 
 echo "config git and ssh"
 if [ -f "~/.ssh/id_rsa.pub" ]; then
