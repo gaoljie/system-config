@@ -6,6 +6,7 @@ dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux 
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 wsl --set-default-version 2
 
+scoop uninstall scoop
 $env:SCOOP='D:\Applications\Scoop'
 [Environment]::SetEnvironmentVariable('SCOOP', $env:SCOOP, 'User')
 
