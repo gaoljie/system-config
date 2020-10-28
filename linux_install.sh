@@ -7,8 +7,6 @@ echo "install zsh"
 sudo apt install -y zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-sudo chsh -s $(which zsh)
-
 echo "config zsh alias"
 profile=~/.zshrc
 
@@ -52,6 +50,8 @@ fi
 echo "Done!"
 
 cat ~/.ssh/id_rsa.pub
+
+sudo chsh -s $(which zsh)
 
 #CNTX=users; NAME=gaoljie; PAGE=1
 #curl "https://api.github.com/$CNTX/$NAME/repos?page=$PAGE&per_page=100" |
