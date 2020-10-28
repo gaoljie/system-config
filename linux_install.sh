@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# echo y | sh -c "$(curl -fsSL https://raw.githubusercontent.com/gaoljie/system-config/master/linux_install.sh)"
+# yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/gaoljie/system-config/master/linux_install.sh)"
 
 sudo apt update
 echo "install zsh"
 sudo apt install -y zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-chsh -s $(which zsh)
+sudo chsh -s $(which zsh)
 
 echo "config zsh alias"
 profile=~/.zshrc
@@ -42,7 +42,7 @@ if [ -f "~/.ssh/id_rsa.pub" ]; then
     echo "git already set up"
 else
 	echo "git setup"
-    ssh-keygen -t rsa -b 4096 -C "gaoljie@gmail.com"
+    ssh-keygen -t rsa -b 4096 -C "gaoljie@gmail.com" -N "" -f ~/.ssh/id_rsa -q
     # The SSH authentication agent allows you to enter your private key passphrase once and it will save it for the whole login session.
     eval "$(ssh-agent -s)"
     ssh-add ~/.ssh/id_rsa
@@ -50,6 +50,8 @@ else
 fi
 
 echo "Done!"
+
+cat ~/.ssh/id_rsa.pub
 
 #CNTX=users; NAME=gaoljie; PAGE=1
 #curl "https://api.github.com/$CNTX/$NAME/repos?page=$PAGE&per_page=100" |
