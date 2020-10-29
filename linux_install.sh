@@ -31,9 +31,11 @@ sudo npm install -g n yarn
 
 echo "install mysql"
 sudo apt install -y mysql-server
+sudo service redis-server start
 
 echo "install redis"
 sudo apt install -y redis
+sudo service redis-server start
 
 echo "config git and ssh"
 if [ -f "~/.ssh/id_rsa.pub" ]; then
