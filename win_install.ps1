@@ -19,4 +19,6 @@ iwr -useb get.scoop.sh | iex
 scoop install git
 scoop bucket add extras
 
+scoop install googlechrome webstorm vscode quicklook snipaste autohotkey
+
 scoop install webstorm insomnia notion slack vscode webtorrent potplayer quicklook snipaste autohotkey
