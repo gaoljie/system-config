@@ -54,6 +54,6 @@ echo "Done!"
 cat ~/.ssh/id_rsa.pub
 
 #chsh -s $(which zsh)
-sudo mysql
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
-FLUSH PRIVILEGES;
+#sudo mysql
+#ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+#FLUSH PRIVILEGES;
