@@ -12,7 +12,7 @@ wsl --set-default-version 2
 # $env:SCOOP_GLOBAL='D:\Applications'
 # [Environment]::SetEnvironmentVariable('SCOOP_GLOBAL', $env:SCOOP_GLOBAL, 'Machine')
 #
-# Set-ExecutionPolicy RemoteSigned -scope CurrentUser
+Set-ExecutionPolicy RemoteSigned -scope CurrentUser
 
 # run the installer
 iwr -useb get.scoop.sh | iex
