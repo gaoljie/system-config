@@ -2,16 +2,10 @@
 cd /mnt/d
 mkdir Github
 cd Github
-mkdir helloyumi
+mkdir yumi
 CNTX=users; NAME=gaoljie; PAGE=1
-curl "https://api.github.com/$CNTX/$NAME/repos?page=$PAGE&per_page=100" |
-  grep -e 'git_url*' |
-  cut -d \" -f 4 |
-  xargs -L1 git clone
+curl "https://api.github.com/users/gaoljie/repos?per_page=1000" | grep -o 'git@[^"]*' | xargs -L1 git clone
 
-cd helloyumi
-CNTX=orgs; NAME=helloyumi; PAGE=1
-curl "https://api.github.com/$CNTX/$NAME/repos?page=$PAGE&per_page=100" |
-  grep -e 'git_url*' |
-  cut -d \" -f 4 |
-  xargs -L1 git clone
+GITHUB_API_TOKEN=
+cd yumi
+curl "https://api.github.com/orgs/helloyumi/repos?access_token=$GITHUB_API_TOKEN&per_page=1000" | grep -o 'git@[^"]*' | xargs -L1 git clone
