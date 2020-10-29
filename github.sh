@@ -1,3 +1,4 @@
+#sh -c "$(curl -fsSL https://raw.githubusercontent.com/gaoljie/system-config/master/github.sh)"
 cd /mnt/d
 mkdir Github
 cd Github
