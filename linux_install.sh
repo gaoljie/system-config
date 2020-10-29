@@ -51,4 +51,4 @@ echo "Done!"
 
 cat ~/.ssh/id_rsa.pub
 
-sudo chsh -s $(which zsh)
+chsh -s $(which zsh)
