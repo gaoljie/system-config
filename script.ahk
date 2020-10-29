@@ -37,6 +37,7 @@
 ; minimize windows
 !m::WinMinimize,a
 
+
 !r::Send ^r
 !Backspace::Send ^d
 +!Backspace::FileRecycleEmpty
