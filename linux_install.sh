@@ -31,7 +31,7 @@ sudo npm install -g n yarn
 
 echo "install mysql"
 sudo apt install -y mysql-server
-sudo service redis-server start
+sudo /etc/init.d/mysql start
 
 echo "install redis"
 sudo apt install -y redis
