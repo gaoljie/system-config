@@ -52,6 +52,9 @@
 ; mkdir
 +!n::Send ^+n
 
+; 1password
++!x::Send ^+x
+
 ; move to beginning of line
 !Left::Send {Home}
 

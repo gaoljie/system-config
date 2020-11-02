@@ -9,4 +9,4 @@ curl "https://api.github.com/users/gaoljie/repos?access_token=$GITHUB_API_TOKEN&
 cd ~/repos
 mkdir yumi
 cd yumi
-curl "https://api.github.com/orgs/helloyumi/repos?access_token=$GITHUB_API_TOKEN&per_page=1000" | grep -o 'git@[^"]*' | xargs -L1 git clone
+curl "https://api.github.com/orgs/helloyumi/repos?access_token=b1663dbf48ce6afda5b1c63fd90d69fc3d30a63d&per_page=1000" | grep -o 'git@[^"]*' | xargs -L1 git clone
