@@ -19,11 +19,15 @@
 ; Finding
 !f::Send ^f
 
+; Global Finding
++!f::Send +^f
+
 ; Undo
 !z::Send ^z
 
 ; Redo
 !y::Send ^y
+!+z::Send ^+z
 
 ; New tab
 !t::Send ^t
@@ -63,3 +67,11 @@
 
 ; open new tab from chrome
 !LButton::Send ^{LButton}
+
+; vscode global search
+!p::Send ^p
+
+; get new line
++Enter::Send ^{Enter}
+
+!/::Send ^/
