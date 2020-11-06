@@ -75,3 +75,5 @@
 +Enter::Send ^{Enter}
 
 !/::Send ^/
+
+#!i::Send ^+i
