@@ -77,3 +77,5 @@
 !/::Send ^/
 
 #!i::Send ^+i
+
+#c::Send !i
