@@ -31,8 +31,7 @@ PACKAGES=(
     yarn
     zsh
     aws
-    youtube-dl
-    postgresql
+    mysql
 )
 
 brew install ${PACKAGES[@]}
@@ -47,21 +46,17 @@ CASKS=(
     flux
     google-chrome
     iina
-    neteasemusic
-    postman
     iterm2
     spectacle
-    mos
     sequel-pro
     ticktick
     typora
     webstorm
     webtorrent
-    shadowsocksx-ng
     slack
     visual-studio-code
-    wechat
     insomnia
+    notion
 )
 
 brew cask install ${CASKS[@]}
@@ -77,54 +72,27 @@ sudo chown -R $(whoami) /usr/local/lib /usr/local/include /usr/local/share
 n stable
 
 # yarn global package
-yarn global add @vue/cli
 yarn global add serve
-yarn global add create-react-app
 
 
 # start redis
 # brew services start redis
 
 # download oh my zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 curl -o ~/.zshrc https://raw.githubusercontent.com/gaoljie/system-config/master/.zshrc
 
-#  install powefont
-git clone https://github.com/powerline/fonts.git --depth=1
-cd fonts
-./install.sh
-
-# install hightlight
-cd ~/.oh-my-zsh/custom/plugins/
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-git clone https://github.com/zsh-users/zsh-autosuggestions
-
-
-
 # git configure
-cd ~
-if [ -f "~/.ssh/id_rsa.pub" ]; then
-    echo "git already set up"
-else
-	echo "git setup"
-    ssh-keygen -t rsa -b 4096 -C "gaoljie@gmail.com"
-    eval `ssh-agent`
-    ssh-add -K ~/.ssh/id_rsa
-    pbcopy < ~/.ssh/id_rsa.pub
-    cd ~
-    sudo curl -O https://raw.githubusercontent.com/gaoljie/system-config/master/.gitconfig
-fi
-
-
-
-profile=~/.zshrc
-
-if grep -q "alias gbgd" "$profile"; then
-    echo "already added gbgd"
-else
-    echo "alias gbgd='gulp build & gulp dev'" >> ~/.zshrc
-fi
-
-echo "Done!"
+#cd ~
+#if [ -f "~/.ssh/id_rsa.pub" ]; then
+#    echo "git already set up"
+#else
+#	echo "git setup"
+#    ssh-keygen -t rsa -b 4096 -C "gaoljie@gmail.com"
+#    eval `ssh-agent`
+#    ssh-add -K ~/.ssh/id_rsa
+#    pbcopy < ~/.ssh/id_rsa.pub
+#    cd ~
+#    sudo curl -O https://raw.githubusercontent.com/gaoljie/system-config/master/.gitconfig
+#fi

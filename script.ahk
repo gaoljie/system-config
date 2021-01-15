@@ -79,3 +79,5 @@
 #!i::Send ^+i
 
 #c::Send !i
+
+#e::Send #4
