@@ -1,12 +1,11 @@
 #sh -c "$(curl -fsSL https://raw.githubusercontent.com/gaoljie/system-config/master/github.sh)"
-read GITHUB_API_TOKEN
 cd ~
-mkdir repos
-cd repos
+mkdir Repos
+cd Repos
 mkdir gaoljie
 cd gaoljie
-curl "https://api.github.com/users/gaoljie/repos?access_token=&per_page=1000&per_page=1000" | grep -o 'git@[^"]*' | xargs -L1 git clone
-cd ~/repos
+curl -s -H "Authorization: token TOKEN" "https://api.github.com/users/gaoljie/repos?&per_page=1000" | grep -o 'git@[^"]*' | xargs -L1 git clone
+cd ~/Repos
 mkdir yumi
 cd yumi
-curl "https://api.github.com/orgs/helloyumi/repos?access_token=&per_page=1000" | grep -o 'git@[^"]*' | xargs -L1 git clone
+curl -s -H "Authorization: token TOKEN" "https://api.github.com/orgs/helloyumi/repos?&per_page=1000" | grep -o 'git@[^"]*' | xargs -L1 git clone
