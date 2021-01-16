@@ -71,3 +71,8 @@ else
     cd ~
     sudo curl -O https://raw.githubusercontent.com/gaoljie/system-config/master/.gitconfig
 fi
+
+#alias yi='yarn install'
+#alias yd='yarn dev'
+#alias yb='yarn build'
+#alias ys='yarn start'
