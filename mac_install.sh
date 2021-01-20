@@ -39,6 +39,7 @@ PACKAGES=(
     visual-studio-code
     insomnia
     notion
+    scroll-reverser
 )
 
 brew install ${PACKAGES[@]}
@@ -58,7 +59,7 @@ brew services start mysql
 # download oh my zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# git configure
+# git configure or upload your old ssh
 cd ~
 if [ -f "~/.ssh/id_rsa.pub" ]; then
     echo "git already set up"
@@ -83,3 +84,7 @@ else
     echo "alias yb='yarn build'" >> ~/.zshrc
     echo "alias ys='yarn start'" >> ~/.zshrc
 fi
+
+# install input method
+
+# switch command and alt for keyboard
