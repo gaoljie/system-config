@@ -13,7 +13,7 @@ xcode-select --install
 # Check for Homebrew, install if we don't have it
 if test ! $(which brew); then
     echo "Installing homebrew..."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
 echo "Installing brew packages..."
@@ -21,28 +21,29 @@ echo "Installing brew packages..."
 PACKAGES=(
     n
     redis
+    postgresql
     yarn
-    awscli
     mysql
-    alfred
     flux
     microsoft-edge
     iina
     iterm2
     spectacle
-    sequel-pro
     ticktick
-    typora
     webstorm
-    webtorrent
     slack
     visual-studio-code
     insomnia
+    postman
     notion
     scroll-reverser
 )
 
 brew install ${PACKAGES[@]}
+
+echo "install nvm" 
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+nvm install 16
 
 echo "Config n package"
 
@@ -57,7 +58,7 @@ brew services start redis
 brew services start mysql
 
 # download oh my zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # git configure or upload your old ssh
 cd ~
