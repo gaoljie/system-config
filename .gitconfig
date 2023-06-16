@@ -48,3 +48,6 @@
 	eol = lf
 [pull]
 	ff = only
+	
+[commit]
+	gpgsign = true
