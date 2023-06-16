@@ -42,6 +42,7 @@ PACKAGES=(
 
 brew install ${PACKAGES[@]}
 
+# two npm registry
 echo "install nvm" 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 nvm install 16
@@ -61,9 +62,9 @@ brew services start mysql
 # download oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# git configure or upload your old ssh
+# git configure or upload your old ssh (two ssh key)
 
-# install gpg
+# install gpg (two gpg key)
 cd ~
 if [ -f "~/.ssh/id_rsa.pub" ]; then
     echo "git already set up"
