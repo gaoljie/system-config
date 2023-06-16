@@ -27,6 +27,7 @@ PACKAGES=(
     flux
     microsoft-edge
     iina
+    gnupg
     iterm2
     spectacle
     ticktick
@@ -61,6 +62,8 @@ brew services start mysql
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # git configure or upload your old ssh
+
+# install gpg
 cd ~
 if [ -f "~/.ssh/id_rsa.pub" ]; then
     echo "git already set up"
