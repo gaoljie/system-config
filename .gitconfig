@@ -43,6 +43,8 @@
 [user]
 	name = Jay Gao
 	email = gaoljie@gmail.com
+[includeIf "gitdir:~/Project/gaoljie/"]
+  path = ~/.gitconfig-personal	
 [core]
 	autocrlf = input
 	eol = lf
