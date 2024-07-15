@@ -1,83 +1,83 @@
 ; Make Ctrl + S work with cmd (windows) key
-!s::Send, ^s
+!s::Send "^s"
 
 ; Selecting
-!a::Send, ^a
+!a::Send "^a"
 
 ; Copying
-!c::Send, ^c
+!c::Send "^c"
 
 ; Pasting
-!v::Send, ^v
+!v::Send "^v"
 
 ; Cutting
-!x::Send, ^x
+!x::Send "^x"
 
 ; Opening
-!o::Send ^o
+!o::Send "^o"
 
 ; Finding
-!f::Send ^f
+!f::Send "^f"
 
 ; Global Finding
-+!f::Send +^f
++!f::Send "+^f"
 
 ; Undo
-!z::Send ^z
+!z::Send "^z"
 
 ; Redo
-!y::Send ^y
-!+z::Send ^+z
+!y::Send "^y"
+!+z::Send "^+z"
 
 ; New tab
-!t::Send ^t
+!t::Send "^t"
 
 ; close tab
-!w::Send ^w
+!w::Send "^w"
 
 ; clear terminal history
-!k::Send ^l
+!k::Send "^l"
 
 ; Close windows (cmd + q to Alt + F4)
-!q::Send !{F4}
+!q::Send "!{F4}"
 
 ; minimize windows
-!m::WinMinimize,a
+!m::WinMinimize "A"
 
 ; refresh
-!r::Send ^r
+!r::Send "^r"
 
 ; delete file
-!Backspace::Send ^d
+!Backspace::Send "^d"
 
 ; empty bin
 +!Backspace::FileRecycleEmpty
 
 ; mkdir
-+!n::Send ^+n
++!n::Send "^+n"
 
 ; 1password
-+!x::Send ^+x
++!x::Send "^+x"
 
 ; move to beginning of line
-!Left::Send {Home}
+!Left::Send "{Home}"
 
 ; move to end of line
-!Right::Send {End}
+!Right::Send "{End}"
 
 ; open new tab from chrome
-!LButton::Send ^{LButton}
+!LButton::Send "^{LButton}"
 
 ; vscode global search
-!p::Send ^p
+!p::Send "^p"
 
 ; get new line
-+Enter::Send ^{Enter}
++Enter::Send "^{Enter}"
 
-!/::Send ^/
+!/::Send "^/"
 
-#!i::Send ^+i
+#!i::Send "^+i"
 
-#c::Send !i
+#c::Send "!i"
 
-#e::Send #4
+#e::Send "#4"
