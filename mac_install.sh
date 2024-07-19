@@ -1,7 +1,7 @@
 echo "Configuring OSX..."
 
 # Show filename extensions by default
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+# defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # password can be less than 4 digits
 pwpolicy -clearaccountpolicies
@@ -13,7 +13,7 @@ xcode-select --install
 # Check for Homebrew, install if we don't have it
 if test ! $(which brew); then
     echo "Installing homebrew..."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 echo "Installing brew packages..."
