@@ -42,6 +42,13 @@ PACKAGES=(
 
 brew install ${PACKAGES[@]}
 
+# start redis
+brew services start redis
+brew services start mysql
+
+# download oh my zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 # two npm registry
 echo "install nvm" 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
@@ -54,13 +61,6 @@ sudo mkdir /usr/local/n
 sudo chown -R $(whoami) /usr/local/n
 sudo chown -R $(whoami) /usr/local/lib /usr/local/include /usr/local/share
 n stable
-
-# start redis
-brew services start redis
-brew services start mysql
-
-# download oh my zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # git configure or upload your old ssh (two ssh key)
 
